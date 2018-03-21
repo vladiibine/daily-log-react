@@ -8,6 +8,7 @@ class MyEditor extends React.Component {
         this.state = {editorState: EditorState.createEmpty()};
         this.onChange = (editorState) => this.setState({editorState});
         this.handleKeyCommand = this.handleKeyCommand.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
     handleKeyCommand(command, editorState){
@@ -21,9 +22,19 @@ class MyEditor extends React.Component {
         return 'not-handled'
     }
 
+    handleKeyPress(evt){
+        console.log('a key was pressed!');
+        debugger
+    }
+
     render() {
         return (
-            <Editor editorState={this.state.editorState} onChange={this.onChange} handleKeyCommand={this.handleKeyCommand}/>
+            <Editor
+                editorState={this.state.editorState}
+                onChange={this.onChange}
+                handleKeyCommand={this.handleKeyCommand}
+                keyBindingFn={this.handleKeyPress}
+            />
         );
     }
 }
