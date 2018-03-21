@@ -4,7 +4,8 @@
   "description": "app for tracking daily activities",
   "main": "index.js",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build": "webpack --mode production",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test"
   },
   "repository": {
@@ -21,7 +22,15 @@
     "url": "https://github.com/vladiibine/daily-log-react/issues"
   },
   "homepage": "https://github.com/vladiibine/daily-log-react#readme",
+  "//": {
+    "comment": "this is a comment block. Node.js doesn't and will never use the key // for anything but comments",
+    "draft-js": [
+      "https://draftjs.org/docs/quickstart-rich-styling.html#content",
+      "We'll use this editor instead of implementing our own. Seems cool"
+    ]
+  },
   "dependencies": {
+    "draft-js": "^0.10.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
